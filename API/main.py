@@ -8,6 +8,7 @@ import io
 import matplotlib.pyplot as plt
 from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
+from download_model import download_model
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -24,6 +25,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Download model if not exists
+download_model()
 
 # Loading the trained model
 MODEL = tf.keras.models.load_model("./model/model_inceptionV3.h5")
