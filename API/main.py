@@ -1,17 +1,14 @@
-import os
-from fastapi import FastAPI, HTTPException, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-import torch
-import librosa
-import numpy as np
-from typing import Optional
-import io
+from fastapi import FastAPI, File, UploadFile, HTTPException
 import uvicorn
+import numpy as np
+import librosa
 import librosa.display
 import tensorflow as tf
+import io
 import matplotlib.pyplot as plt
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
+from download_model import download_model
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -29,8 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Download model if not exists
+download_model()
+
 # Loading the trained model
-MODEL = tf.keras.models.load_model("model_inceptionV3.h5")
+MODEL = tf.keras.models.load_model("./model/model_inceptionV3.h5")
 
 # Class names (High activity or Low activity)
 CLASS_NAMES = ["High activity", "Low activity"]
@@ -74,16 +74,20 @@ async def predict(file: UploadFile = File(...)):
         img_array = audio_to_mel(audio_bytes)
 
         predictions = MODEL.predict(img_array)
-        predicted_class = CLASS_NAMES[int(predictions[0] > 0.5)]
+        raw_confidence = float(predictions[0])
+        # If confidence is less than 0.5, it's "Low activity" with confidence (1 - raw_confidence)
+        # If confidence is more than 0.5, it's "High activity" with confidence raw_confidence
+        confidence_value = raw_confidence if raw_confidence > 0.5 else (1 - raw_confidence)
+        predicted_class = "High activity" if raw_confidence > 0.5 else "Low activity"
 
         return {
             'filename': file.filename,
             'class': predicted_class,
-            'confidence': float(predictions[0]) if predicted_class == "High activity" else float(1 - predictions[0])
+            'confidence': f"{confidence_value * 100:.2f}%"  # Will always show the higher confidence
         }
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
