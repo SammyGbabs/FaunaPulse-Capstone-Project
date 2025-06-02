@@ -15,8 +15,9 @@ def download_model():
     # Check if model exists
     if not os.path.exists(model_path):
         print("Downloading model...")
-        # Replace this URL with your Google Drive shared link
-        url = "https://drive.google.com/file/d/1WrOml4YF2GOAcQpuBRlyY7LoBDF8w9hI/view?usp=drive_link"
+        # Extract file ID from Google Drive link
+        file_id = "1WrOml4YF2GOAcQpuBRlyY7LoBDF8w9hI"
+        url = f"https://drive.google.com/uc?id={file_id}"
         gdown.download(url, model_path, quiet=False)
         print("Model downloaded successfully!")
     else:
