@@ -30,11 +30,11 @@ ENV/
 *.swp
 *.swo
 
-# Model files (if not using Git LFS)
-# *.h5
-# *.keras
-# model/*.h5
-# model/*.keras
+# Model files
+*.h5
+*.keras
+model/*.h5
+model/*.keras
 
 # Logs
 *.log
