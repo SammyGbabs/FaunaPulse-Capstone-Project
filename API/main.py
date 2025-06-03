@@ -8,7 +8,7 @@ import io
 import matplotlib.pyplot as plt
 from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
-from download_model import download_model
+from .download_model import download_model
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -90,4 +90,4 @@ async def predict(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Error processing file: {str(e)}")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(app, host="localhost", port=8000, reload=True)
