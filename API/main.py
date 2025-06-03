@@ -74,6 +74,7 @@ async def predict(file: UploadFile = File(...)):
         img_array = audio_to_mel(audio_bytes)
 
         predictions = MODEL.predict(img_array)
+
         raw_confidence = float(predictions[0])
         # If confidence is less than 0.5, it's "Low activity" with confidence (1 - raw_confidence)
         # If confidence is more than 0.5, it's "High activity" with confidence raw_confidence
