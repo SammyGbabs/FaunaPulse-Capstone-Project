@@ -70,7 +70,7 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 5. **Run the FastAPI server:**
 
    ```bash
-   uvicorn main:app --reload
+   uvicorn API.main:app --reload --host localhost --port 8000
    ```
 
 > 🌍 Deployed API: See `API/README.md` for the live Render link.
@@ -115,25 +115,37 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 ## 📸 App Screenshots
 
 * 🧠 Info Pages: This section contains general information about soil health and how FaunaPulse works.
-
+![Splashscreen Screen](./images/SplashScreen.png)
+![Walk through1 Screen](./images/Walk_through1.png)
+![Walk through2 Screen](./images/Walk_through2.png)
+![Walk through3 Screen](./images/Walk_through3.png)
 
 * 🔐 Sign Up / Sign In: Secure authentication pages for new and returning users.
 ![Signup Screen](./images/Signup.png)
 ![Login Screen](./images/Login.png)
 
-* 📊 Dashboard:
+* 📊 Dashboard: A real-time overview of soil fauna data including bioacoustic activity and sensor readings.
+![Dashboard Screen](./images/Dashboard-1.png)
+![Dashboard-followup Screen](./images/Dashboard.png)
 
-* ⬆️ Manual Upload:
+* ⬆️ Manual Upload: Manually upload audio or sensor data for analysis.
+![Upload Screen](./images/Upload.png)
+![Result Screen](./images/Result.png)
 
-* 🤖 Chatbot: 
+* 🤖 Chatbot: An AI-powered assistant that answers user queries about soil health and app usage.
+![chatbot Screen](./images/Chatbot.png)
 
-* 🕓 History:
+🔔 Push Notification: Real-time alerts to notify users of critical soil conditions like low fauna activity or abnormal moisture levels.
+![Push Notification Screen](./images/pushnot.png)
+
+* 🕓 History: Displays historical logs of soil activity, alerts, and system responses.
+![History Screen](./images/History.png)
 
 ---
 
 ## 🎨 Design Prototype
 
-🎨 [Figma File](https://github.com/SammyGbabs/FaunaPulse-Capstone-Project)
+🎨 [Figma File](https://www.figma.com/design/E711yGypzSbVb67xeNCud2/Fauna-Pulse?node-id=0-1&t=7Ms4QG1h1jL6bYI2-1)
 
 ---
 
@@ -145,15 +157,88 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 
 ## 🚀 Deployment Plan
 
-* The full system will be deployed in a **real farm setting**
-* **Model Hosting**: Hugging Face
-* **Backend Deployment**: Render
-* **Frontend**: Flutter App
-* **Database**: Supabase or Firebase
-
-For more details, refer to individual subdirectory README files.
+The **FaunaPulse** system is designed to be fully operational in real-world agricultural environments. The deployment architecture includes several integrated components: a deep learning model, a FastAPI backend, a mobile frontend, and sensor hardware. Here's how each piece is deployed:
 
 ---
+
+### 1. 🧠 Model Deployment (Hugging Face)
+
+- The trained deep learning model, responsible for classifying bioacoustic data (high vs low fauna activity), is hosted on **Hugging Face Spaces**.
+- This ensures scalability, version control, and easy integration with the FastAPI backend via API calls.
+- Continuous monitoring and retraining of the model can be managed via Hugging Face's CI/CD tools or GitHub Actions.
+
+🔗 [View or access the model on Hugging Face](https://huggingface.co/spaces/...)
+
+---
+
+### 2. ⚙️ Backend Deployment (FastAPI + Render)
+
+- The backend server is built using **FastAPI** and deployed on **Render**, a reliable and cost-effective platform for web services.
+- The backend handles:
+  - Receiving and processing sensor/audio data.
+  - Forwarding audio to the ML model API.
+  - Managing user authentication and alert logic.
+  - Interfacing with the Supabase/Firebase database.
+
+🔗 The live API URL can be found in the [API directory README](https://github.com/SammyGbabs/FaunaPulse-Capstone-Project/tree/main/API).
+
+---
+
+### 3. 📱 Mobile App Deployment (Flutter)
+
+- The mobile app is developed in **Flutter**, ensuring cross-platform compatibility (Android).
+- Features include:
+  - Real-time dashboard.
+  - Chatbot support.
+  - History logs.
+  - Manual data uploads.
+  - Push notifications and alerts.
+- The APK is available for direct download or can be built via:
+
+```bash
+flutter build apk
+````
+
+📲 [Download APK](https://drive.google.com/file/d/10-7qCPyJRSdM_iNmgaKdzn-fn-nO1oh6/view?usp=sharing)
+
+---
+
+### 4. 📡 Hardware Deployment (IoT + Sensor Network)
+
+* Sensors used:
+
+  * **Piezo Discs** – for capturing soil vibrations.
+  * **SHT30** – for soil temperature and humidty.
+  * **Capacitive analog** – for soil moisture.
+* Microcontroller (e.g., ESP32-C3) reads sensor values and transmits data via Wi-Fi to the FastAPI endpoint.
+* Power: Battery-operated setup for remote farms.
+* Hardware is enclosed in weather-resistant casing for durability in field conditions.
+
+---
+
+### 5. 🔒 Database & Authentication (Supabase or Firebase)
+
+* **Supabase** (or **Firebase** as an alternative) is used to:
+
+  * Store sensor data, user records, and historical logs.
+  * Manage user sessions and secure authentication.
+  * Provide real-time syncing for dynamic data updates.
+
+---
+
+### 6. 🔔 Notification System
+
+* The system leverages:
+
+  * **Firebase Cloud Messaging (FCM)** for in-app push notifications.
+  * **SendGrid** or **SMTP** for automated email alerts.
+* Notifications are triggered when:
+
+  * Fauna activity drops below expected thresholds.
+  * Soil moisture/temperature/humidity exceeds healthy ranges.
+
+---
+
 
 ## 📩 Contact
 
@@ -161,5 +246,5 @@ For questions or collaborations, feel free to reach out:
 
 **Babalola Samuel**
 📧 [s.babalola@alustudent.com](mailto:s.babalola@alustudent.com)
-🔗 [LinkedIn](https://www.linkedin.com/in/yourprofile)
+🔗 [LinkedIn](https://www.linkedin.com/in/sammybabs/)
 
