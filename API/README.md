@@ -23,3 +23,5 @@ The model will be automatically downloaded from Google Drive on first run.
 
 ## Note
 The model file (~100MB) is stored on Google Drive and downloaded automatically.
+
+🌍 The live and deployed API link is [here]()
