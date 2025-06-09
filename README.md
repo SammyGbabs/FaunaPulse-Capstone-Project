@@ -1,8 +1,4 @@
-Here’s a cleaned-up and professional version of your **README.md** file for your **FaunaPulse** project:
-
----
-
-# 🌱 FaunaPulse
+# 🌱 FaunaPulse - AI-Driven IoT system for non-invasive soil fauna monitoring via bioacoustic and environmental sensing.
 
 ## 📌 Project Description
 
