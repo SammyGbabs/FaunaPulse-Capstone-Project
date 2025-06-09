@@ -146,7 +146,7 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 
 ## 🎥 Demo
 
-🎬 [Watch Demo Video](https://github.com/SammyGbabs/FaunaPulse-Capstone-Project)
+🎬 [Watch Demo Video](https://drive.google.com/file/d/1RqHnKHlgAsEGxp39k1VT_13tz3vFybnA/view?usp=sharing)
 
 ---
 
