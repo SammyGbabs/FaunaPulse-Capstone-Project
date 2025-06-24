@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from fastapi import FastAPI, File, UploadFile, HTTPException
 import uvicorn
 import numpy as np
@@ -5,11 +8,10 @@ import librosa
 import librosa.display
 import tensorflow as tf
 import io
-import os
 import matplotlib.pyplot as plt
 from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
-from .download_model import download_model
+from API.download_model import download_model
 
 # Initialize FastAPI app
 app = FastAPI(
