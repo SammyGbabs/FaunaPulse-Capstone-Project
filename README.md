@@ -107,6 +107,14 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 
 ---
 
+## 🖥️ Circuit Diagram
+
+Below is the screenshot of my circuit diagram.
+
+![Circuit Diagram](./images/Circuit-Diagram.png)
+
+---
+
 ## 📸 App Screenshots
 
 * 🧠 Info Pages: This section contains general information about soil health and how FaunaPulse works.

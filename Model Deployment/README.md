@@ -1,3 +1,16 @@
+---
+title: FaunaPulse
+emoji: 👁
+colorFrom: red
+colorTo: indigo
+sdk: docker
+pinned: false
+license: apache-2.0
+short_description: API Endpoint for soil organism recordings
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
 # FaunaPulse API
 
 Audio activity classification API using InceptionV3 model.
