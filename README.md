@@ -20,7 +20,7 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 
 ## 🎥 Demo
 
-Below is the demo video showcasing the features and workflow of FaunaPulse:
+Below is the demo video showcasing all the features, functionalities and workflow of FaunaPulse:
 
 🎬 [Watch Demo Video](https://drive.google.com/drive/folders/1ysQDpDNbC_lDK28U8dfWJQWe8rR3-qZW?usp=drive_link)
 
