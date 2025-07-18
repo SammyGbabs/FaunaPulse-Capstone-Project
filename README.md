@@ -103,7 +103,7 @@ All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Fir
 
    Or download the APK directly:
 
-   👉 [Download APK](https://drive.google.com/file/d/10-7qCPyJRSdM_iNmgaKdzn-fn-nO1oh6/view?usp=sharing)
+   👉 [Download APK](https://drive.google.com/file/d/1Egjc2gORn48z1I4eIjPylhnCNxhMr4gn/view?usp=sharing)
 
 ---
 
