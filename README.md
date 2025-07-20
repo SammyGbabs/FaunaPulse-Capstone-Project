@@ -14,7 +14,7 @@ Simultaneously, the system gathers essential environmental metrics via sensors:
 * **SHT30 Sensor Probe** – Soil Temperature and Humidity
 * **Capacitive Analog Sensor** – Soil Moisture
 
-All data is securely transmitted to a cloud backend (e.g., **Supabase** or **Firebase**) and displayed in a **user-friendly mobile app**. When critical conditions are detected (e.g., low fauna activity, poor moisture), **real-time alerts** are triggered via email and in-app notifications. FaunaPulse enables proactive soil health management and ecological sustainability.
+All data is securely transmitted to a cloud backend (**Supabase**) and displayed in a **user-friendly mobile app**. When critical conditions are detected (e.g., low fauna activity, poor moisture), **real-time alerts** are triggered via email and in-app notifications. FaunaPulse enables proactive soil health management and ecological sustainability.
 
 ---
 
@@ -151,6 +151,34 @@ Below is the screenshot of my circuit diagram.
 
 * 🕓 History: Displays historical logs of soil activity, alerts, and system responses.
 ![History Screen](./images/History.png)
+
+---
+
+## 🔄 Project Workflow (From IoT to Supabase)
+
+1. **Recording of the audio**
+   ![Audio Recording](./images/AudioRecording.png)
+
+2. **Sending the audio to the database**
+   ![Audio to Database](./images/AudioToDatabase.png)
+
+3. **Capturing and sending of environmental data to database**
+   ![Environmental Data](./images/EnvironmentalData.png)
+
+4. **Audio files in the database**
+   ![Audio Files in DB](./images/AudioFilesInDB.png)
+
+5. **Recorded audio files stored in the database**
+   ![Stored Audio Files](./images/StoredAudioFiles.png)
+
+6. **Environmental data in the database**
+   ![Environmental Data in DB](./images/EnvironmentalDataInDB.png)
+
+7. **Predictions made by the model based on the audio data received**
+   ![Model Predictions](./images/ModelPredictions.png)
+
+8. **Email Notification**
+   ![Email Notification](./images/EmailNotification.png)
 
 ---
 
