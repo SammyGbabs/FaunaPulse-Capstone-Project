@@ -151,7 +151,7 @@ Below is the screenshot of my circuit diagram.
 ![Signup Screen](./images/Signup.png)
 ![Login Screen](./images/Login.png)
 
-* 📊 Dashboard: A real-time overview of soil fauna data including bioacoustic activity and sensor readings.
+* 📊 Dashboard: A real-time overview of soil fauna bioacoustic activity and environmental readings.
 ![Dashboard Screen](./images/Dashboard.png)
 ![Dashboard-followup Screen](./images/Dashboard-1.png)
 
