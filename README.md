@@ -115,6 +115,22 @@ Below is the demo video showcasing all the features, functionalities and workflo
 
 ---
 
+## 🏗️ System Architecture
+
+The diagram below illustrates the overall system architecture of FaunaPulse, showing how the IoT devices, backend, machine learning model, and user interfaces interact to enable real-time soil monitoring and alerting.
+
+![System Architecture](./images/SystemArchitecture.png)
+
+---
+
+## 🧠 Model Architecture
+
+The following diagram presents the architecture of the deep learning model used for classifying soil bioacoustic signals. It highlights the key layers and data flow from input MEL spectrograms to the final activity prediction.
+
+![Model Architecture](./images/ModelArchitecture.png)
+
+---
+
 ## 🖥️ Circuit Diagram
 
 Below is the screenshot of my circuit diagram.
@@ -185,6 +201,16 @@ Below is the screenshot of my circuit diagram.
 ## 🎨 Design Prototype
 
 🎨 [Figma File](https://www.figma.com/design/E711yGypzSbVb67xeNCud2/Fauna-Pulse?node-id=0-1&t=7Ms4QG1h1jL6bYI2-1)
+
+## 🚀 Deployment Plan
+
+The model was deployed on the Hugging Face platform, and the entire project was tested in a real farm located in Nyamata. In this project, vibration levels from the soil were recorded as audio over a period of time. These audio recordings were then converted into MEL spectrogram images and passed through the model to classify the biological activity in the soil. Temperature and humidity data were collected using the SHT30 sensor, while a capacitive analog sensor was used to measure soil moisture. All readings were displayed in real-time on a dashboard. Whenever the activity of soil-dwelling organisms or the environmental conditions were not suitable, alerts were sent through email and mobile push notifications. The system continues to be improved by updating the model with new data, helping it become more accurate and effective over time.
+
+---
+
+## 🏁 Conclusion
+
+FaunaPulse demonstrates the power of integrating AI, IoT, and real-time data analytics to address critical challenges in sustainable agriculture such as decline in agricultural productivity, and in climate change including loss of soil biodiversity, and soil degradation. By enabling non-invasive monitoring of soil health, the system empowers farmers with actionable insights, helping them make informed decisions to improve crop yield and ecological balance. The project’s modular design allows for continuous improvement, with the potential to incorporate more advanced sensors, predictive analytics, and broader deployment in diverse agricultural settings. As the system evolves, FaunaPulse aims to become an indispensable tool for promoting soil vitality,  environmental stewardship, and food security worldwide.
 
 ---
 
